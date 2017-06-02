@@ -11,7 +11,11 @@ module.exports = function (md) {
   md.renderer.rules.fence = function (tokens, idx, options, env, self) {
     const token = tokens[idx]
     if (matchedLang(token.info)) {
-      token.content = prettier.format(token.content, options.prettier)
+      try {
+        token.content = prettier.format(token.content, options.prettier)
+      } catch (err) {
+        // Ignore errors, simply skipping prettier
+      }
     }
     return originalFence.call(this, tokens, idx, options, env, self)
   }
