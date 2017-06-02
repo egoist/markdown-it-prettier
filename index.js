@@ -1,6 +1,7 @@
 const prettier = require('prettier')
 
 function matchedLang(lang) {
+  lang = lang.trim()
   return ['js', 'javascript', 'jsx'].indexOf(lang) > -1
 }
 

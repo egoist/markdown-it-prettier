@@ -6,7 +6,7 @@ return 1
 }
 ```
 
-```javascript
+``` javascript
 class foo{
   bar() {console.log(1)}
 }
