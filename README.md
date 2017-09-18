@@ -12,10 +12,11 @@ yarn add markdown-it-prettier
 
 ```js
 const md = require('markdown-it')()
-const prettier = require('markdown-it-prettier')
+const md_prettier = require('markdown-it-prettier')
+const prettier = require('prettier')
 
 const options = { singleQuote: true }
-md.use(prettier, options)
+md.use(md_prettier, options, prettier)
 ```
 
 ###
