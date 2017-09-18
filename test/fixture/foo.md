@@ -29,4 +29,12 @@ pre[class*='language-'] {padding: 1.75em;
 }
 ```
 
+```less
+@base: #f938ab;
+
+.box-shadow(@style, @c) when (iscolor(@c)) {    -webkit-box-shadow: @style @c;
+box-shadow:         @style @c;
+}
+```
+
 

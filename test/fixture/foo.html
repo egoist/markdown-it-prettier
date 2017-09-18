@@ -25,3 +25,10 @@
   }
 }
 </code></pre>
+<pre><code class="language-less">@base: #f938ab;
+
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  -webkit-box-shadow: @style @c;
+  box-shadow: @style @c;
+}
+</code></pre>

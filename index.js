@@ -1,12 +1,14 @@
 const prettier = require('prettier')
 
+const css = ['css', 'scss', 'less']
+
 function matchedLang(lang) {
   lang = lang.trim()
-  return ['js', 'javascript', 'jsx', 'css', 'scss'].indexOf(lang) > -1
+  return ['js', 'javascript', 'jsx', ...css].indexOf(lang) > -1
 }
 
 function getParser (lang) {
-  return ['css', 'scss'].indexOf(lang.trim()) > -1 ? 'postcss' : 'babylon'
+  return css.indexOf(lang.trim()) > -1 ? 'postcss' : 'babylon'
 }
 
 module.exports = function (md, opts, _prettier = prettier) {
