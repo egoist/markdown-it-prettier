@@ -9,3 +9,26 @@
   }
 }
 </code></pre>
+<pre><code class="language-css">pre[class*='language-'] {
+  padding: 1.75em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+</code></pre>
+<pre><code class="language-scss">.md {
+  pre[class*='language-'] {
+    padding: 1.75em;
+    margin: 0.5em 0;
+    overflow: auto;
+    border-radius: 0.3em;
+  }
+}
+</code></pre>
+<pre><code class="language-less">@base: #f938ab;
+
+.box-shadow(@style, @c) when (iscolor(@c)) {
+  -webkit-box-shadow: @style @c;
+  box-shadow: @style @c;
+}
+</code></pre>
