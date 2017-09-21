@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-prettier",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Format JavaScript in your markdown code.",
   "repository": {
     "url": "egoist/markdown-it-prettier",
