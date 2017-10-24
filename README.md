@@ -47,6 +47,8 @@ class Foo {
 ```
 ````
 
+It could format all kinds of code that [Prettier](https://github.com/prettier/prettier#prettier) could format.
+
 ### Options
 
 [Prettier options](https://github.com/prettier/prettier#options).
