@@ -5,7 +5,7 @@
 ## Install
 
 ```bash
-yarn add markdown-it-prettier
+yarn add prettier markdown-it-prettier
 ```
 
 ## Usage

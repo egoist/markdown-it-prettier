@@ -1,8 +1,22 @@
 const prettier = require('prettier')
 
-function matchedLang(lang) {
+const LANGS = {
+  css: 'css',
+  less: 'less',
+  scss: 'scss',
+  sass: 'scss',
+  js: 'babylon',
+  jsx: 'babylon',
+  javascript: 'babylon',
+  ts: 'typescript',
+  typescript: 'typescript',
+  json: 'json',
+  graphql: 'graphql'
+}
+
+function getParser(lang) {
   lang = lang.trim()
-  return ['js', 'javascript', 'jsx'].indexOf(lang) > -1
+  return LANGS[lang]
 }
 
 module.exports = function (md, opts) {
@@ -10,9 +24,12 @@ module.exports = function (md, opts) {
   // eslint-disable-next-line max-params
   md.renderer.rules.fence = function (tokens, idx, options, env, self) {
     const token = tokens[idx]
-    if (matchedLang(token.info)) {
+    const parser = getParser(token.info)
+    if (parser) {
       try {
-        token.content = prettier.format(token.content, opts)
+        token.content = prettier.format(token.content, Object.assign({}, opts, {
+          parser
+        }))
       } catch (err) {
         // Ignore errors, simply skipping prettier
       }
